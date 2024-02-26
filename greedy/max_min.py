@@ -23,7 +23,6 @@ def maxMin(k, arr):
     return res
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input().strip())
 
@@ -36,7 +35,3 @@ if __name__ == '__main__':
         arr.append(arr_item)
 
     result = maxMin(k, arr)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
