@@ -20,12 +20,14 @@ def xorMatrix(m, first_row):
                 nextRow.append(curr_row[idx] ^ curr_row[0])
         curr_row = nextRow.copy()
         nextRow = []
+        fptr.write(f"generated row-{cur_row_num} is : {curr_row}")
+        fptr.write('\n')
         print(f"generated row-{cur_row_num} is : {curr_row}")
         cur_row_num += 1
     return curr_row
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr = open("./result.txt", 'w')
 
     nm = input().split()
 
