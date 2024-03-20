@@ -7,26 +7,31 @@ import re
 import sys
 
 #
-# Complete the 'camelcase' function below.
+# Complete the 'marsExploration' function below.
 #
 # The function is expected to return an INTEGER.
 # The function accepts STRING s as parameter.
 #
 
-def camelcase(s):
-    str_list = list(s)
+def marsExploration(s):
+    list_s = list(s)
     res = 0
-    for char in str_list:
-        if char.isupper():
+    for idx in range(0, len(list_s), 3):
+        if list_s[idx] != "S":
             res += 1
-    return res+1
+        if list_s[idx+1] != "O":
+            res += 1
+        if list_s[idx+2] != "S":
+            res += 1
+    return res
+        
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     s = input()
 
-    result = camelcase(s)
+    result = marsExploration(s)
 
     fptr.write(str(result) + '\n')
 
