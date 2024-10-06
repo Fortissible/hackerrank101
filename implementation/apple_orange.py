@@ -1,7 +1,6 @@
 def countApplesAndOranges(s, t, a, b, apples: list, oranges: list):
     apples.sort(reverse=True)
     oranges.sort()
-    print(apples, oranges)
     filtered_apples = filter(lambda apple: apple + a >= s and apple + a <= t, apples)
     filtered_orange = filter(lambda orange: b + orange <= t and b + orange >= s, oranges)
     print(len(list(filtered_apples)))
